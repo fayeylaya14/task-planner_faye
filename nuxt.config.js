@@ -18,7 +18,10 @@ export default {
   },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: {
+    global: true,
+    dirs: ['~/components']
+  },
 
   /*
    ** Customize the progress-bar color
@@ -56,6 +59,7 @@ export default {
     "bootstrap-vue/nuxt",
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
+    "@nuxt/components",
     "vue-sweetalert2/nuxt",
   ],
 

@@ -1,1 +1,203 @@
 // Write your custom styling here
+.main-container {
+  display: flex;
+  justify-content: center;
+
+  h1,h2,h3,h4,h5,h6 {
+    text-align: center;
+  }
+
+  p{
+    font-size: 11px;
+    span {
+      color: #F097C2;
+    }
+  }
+}
+
+.instruction-span {
+  font-size: 11px;
+  span {
+    color: #F097C2;
+  }
+}
+
+.search-input{
+  position: relative;
+  width: 100%;
+}
+input {
+  font-size: 12px;
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+}
+
+.search-input:after {
+  content: '+';
+  position: absolute;
+  font-size: 12px;
+}
+
+.tast-card {
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 3px;
+  box-shadow: aliceblue;
+  box-shadow: 1px 2px 5px #888888;
+  font-size: 12px;
+  .content {
+    margin-left:  1rem;
+  }
+}
+
+.spacing {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.add-task {
+  height: 50px;
+  margin-top: -50px;
+}
+
+.task_done_strike, .normal_text {
+  width: 100%;
+}
+.task_done_strike {
+  text-decoration: line-through;
+  margin-left: 0.5rem;
+}
+
+.normal_text {
+  margin-left: 0.5rem;
+}
+
+.modal-backdrop-custom {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-custom {
+  background: #FFFFFF;
+  box-shadow: 2px 2px 20px 1px;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header,
+.modal-footer {
+  padding: 15px;
+  display: flex;
+}
+
+.modal-header {
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+  color: #4AAE9B;
+  justify-content: space-between;
+}
+
+.modal-footer {
+  border-top: 1px solid #eeeeee;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.modal-body {
+  position: relative;
+  padding: 20px 10px;
+}
+
+.btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #4AAE9B;
+  background: transparent;
+}
+
+.btn-green {
+  color: white;
+  background: #4AAE9B;
+  border: 1px solid #4AAE9B;
+  border-radius: 2px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+
+  button {
+    margin: 10px;
+  }
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+}
+
+.yellow_star {
+  color: #F5C13A;
+}
+
+.yellow_star, .normal_star {
+  margin: 3px;
+}
+
+.normal_star, .trash-color {
+  color: #CDD0D7;
+  margin: 3px;
+
+}
+
+.no_style, .no_style:hover, .no_style.dropdown-toggle {
+  color: #CDD0D7;
+  background-color: #F9FAFC;
+  border-color: #F9FAFC;
+  padding: 0;
+  line-height: 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+
+  p {
+    font-size: 12px;
+  }
+}
+
+.dropdown {
+  .dropdown-menu {
+    max-height: 15rem;
+    overflow-y: auto;
+  }
+}
+
+.UniqueFullWidth .input-group-text {
+  width: 48px;
+  border-right: none;
+  background-color: #ffffff;
+}
+.UniqueFullWidth [class^="fa-"], [class*=" fa-"] {
+  display: inline-block;
+  width: 100%;
+}
+.UniqueFullWidth .LoginInput {
+  border-left: none;
+}
