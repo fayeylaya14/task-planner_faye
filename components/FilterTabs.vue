@@ -13,11 +13,13 @@
     </div>
     <b-tabs align="right">
     <b-tab title="All" active>
-      <Task
-        v-for="task in resultQuery"
-        v-bind:key="task.id"
-        :task="task"
-      />
+      <!-- <draggable v-model="draggable"> -->
+        <Task
+          v-for="task in resultQuery"
+          v-bind:key="task.id"
+          :task="task"
+        />
+      <!-- </draggable> -->
     </b-tab>
     <b-tab title="Important" @click="getImportant">
       <Task
@@ -38,6 +40,7 @@
 </template>
 
 <script>
+// import draggable from 'vuedraggable'
 import Task from '../components/Task'
 // import Search from '../components/Search'
 export default {
@@ -53,6 +56,7 @@ export default {
   },
   components: {
     Task
+    // draggable
   },
   methods: {
     getImportant () {
@@ -71,6 +75,14 @@ export default {
         })
       } else {
         return this.task
+      }
+    },
+    draggable: {
+      get () {
+        return this.$store.state.tasks
+      },
+      set (value) {
+        this.$store.commit('update_sort', value)
       }
     },
     resultImportant () {

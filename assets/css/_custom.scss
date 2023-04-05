@@ -46,6 +46,7 @@ input {
   box-shadow: aliceblue;
   box-shadow: 1px 2px 5px #888888;
   font-size: 12px;
+  background: $white;
   .content {
     margin-left:  1rem;
   }
@@ -83,6 +84,7 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2000;
 }
 
 .modal-custom {
@@ -200,4 +202,21 @@ input {
 }
 .UniqueFullWidth .LoginInput {
   border-left: none;
+}
+
+.edit-input {
+  font-size: 12px;
+  margin-left: 1rem;
+  border: 1px solid #d7d7d7;
+  padding: 6px;
+  width: 80%;
+  border-radius: 4px;
+}
+
+.input-width {
+  width: 100%;
+}
+
+.x-icon {
+  color: red;
 }

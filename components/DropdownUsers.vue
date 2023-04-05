@@ -2,9 +2,19 @@
   <div>
     <b-dropdown text="Right align" no-caret toggle-class="no_style">
       <template #button-content>
-        <font-awesome-icon
-          :icon="['fas', 'circle-user']"
-        />
+        <b-avatar
+          v-if="task.assignee.avatar"
+          variant="info"
+          size="sm"
+          :src="task.assignee.avatar">
+        </b-avatar>
+        <div
+          v-else
+        >
+          <font-awesome-icon
+            :icon="['fas', 'circle-user']"
+          />
+        </div>
       </template>
       <b-container fluid>
         <b-row class="my-1">
@@ -14,13 +24,13 @@
         </b-row>
       </b-container>
       <b-dropdown-item-button
-        v-for="users in resultQuery"
-        v-bind:key="users.id"
+        v-for="user in resultQuery"
+        v-bind:key="user.id"
         class="dropdown-item"
-        @click="addAssignee(task.id, users.id)"
+        @click="addAssignee(task.id, user)"
       >
-        <b-avatar variant="info" :src="users.avatar"></b-avatar>
-        <p> {{ users.name }} </p>
+        <b-avatar variant="info" :src="user.avatar"></b-avatar>
+        <p> {{ user.name }} </p>
       </b-dropdown-item-button>
     </b-dropdown>
   </div>
@@ -28,22 +38,23 @@
 
 <script>
 export default {
+  props: {
+    users: [],
+    task: []
+  },
   data () {
     return {
       searchRes: ''
     }
   },
-  props: {
-    users: [],
-    task: []
-  },
   // async fetch ({ store }) {
   //   this.users = await store.dispatch('fetchUsers')
   // },
   methods: {
-    addAssignee (taskID, userID) {
-      console.log(taskID)
-      this.$store.commit('update_assignee', taskID, userID)
+    addAssignee (taskID, user) {
+      console.log(JSON.stringify(user))
+      // const userArr = JSON.stringify(user)
+      this.$store.commit('update_assignee', { taskID, user })
     }
   },
   computed: {

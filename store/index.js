@@ -10,6 +10,7 @@ export const state = () => ({
 export const mutations = {
   ADD_TASK (state, task) {
     const date = new Date()
+    const len = state.tasks.length
     let newTaskObj = []
     newTaskObj = {
       title: task,
@@ -18,7 +19,7 @@ export const mutations = {
       is_done: false,
       is_important: false,
       sort: 5,
-      id: 21
+      id: len + 1
     }
     state.tasks.push(newTaskObj)
     localStorage.setItem('taskList', JSON.stringify(state.tasks))
@@ -41,10 +42,13 @@ export const mutations = {
   setUsersList (state, userList) {
     state.users = userList
   },
-  update_assignee (state, taskID, userID) {
-    state.tasks[taskID].assignee = state.users[userID]
-    console.log(state.users[userID])
+  update_assignee (state, { taskID, user }) {
+    console.log(user)
+    state.tasks[taskID - 1].assignee = user
     localStorage.setItem('taskList', JSON.stringify(state.tasks))
+  },
+  update_task (state, value) {
+    state.tasks[value.taskId - 1].title = value.updatedTask
   }
 }
 
