@@ -5,21 +5,12 @@
         <h1>Welcome To The Task Planner</h1>
         <h5>Get things done with your day. A list that refreshes everyday</h5>
           <AddTask/>
-          <draggable v-model="getList">
-            <p
-              v-for="item in getList"
-              v-bind:key="item.id"
-            >
-              {{ item.title }}
-            </p>
-          </draggable>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import draggable from 'vuedraggable'
 import AddTask from '../components/AddTask'
 export default {
   // props: {
@@ -42,8 +33,7 @@ export default {
     }
   },
   components: {
-    AddTask,
-    draggable
+    AddTask
   },
   async fetch ({ store }) {
     this.tasks = await store.dispatch('fetchTasks')
